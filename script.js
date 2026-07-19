@@ -1,8 +1,4 @@
-/* =============================================
-   CFPEM-SST - Script Principal
-   ============================================= */
-
-// ---- NAVBAR SCROLL ----
+/* Navbar au scroll */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -12,7 +8,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ---- HAMBURGER MENU ----
+/* Menu hamburger */
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -20,14 +16,13 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Fermer le menu au clic sur un lien
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
   });
 });
 
-// ---- SCROLL REVEAL ----
+/* Apparition au scroll */
 const reveals = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -43,7 +38,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => revealObserver.observe(el));
 
-// ---- COUNTER ANIMATION ----
+/* Compteurs animés */
 function animateCounter(el, target, duration = 2000) {
   let start = 0;
   const step = target / (duration / 16);
@@ -74,7 +69,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 if (statsSection) statsObserver.observe(statsSection);
 
-// ---- LIGHTBOX GALERIE ----
+/* Lightbox galerie */
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
@@ -102,7 +97,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ---- FORMULAIRE DE CONTACT ----
+/* Formulaire de contact */
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', (e) => {
@@ -122,7 +117,7 @@ if (form) {
   });
 }
 
-// ---- SMOOTH SCROLL ----
+/* Scroll fluide */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -135,7 +130,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ---- ACTIVE NAV LINK ----
+/* Lien de nav actif */
 const sections = document.querySelectorAll('section[id]');
 const navLinksAll = document.querySelectorAll('.nav-links a');
 
